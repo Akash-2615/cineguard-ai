@@ -1,0 +1,17 @@
+.env
+.git
+.venv
+venv
+__pycache__
+.pytest_cache
+.ruff_cache
+.mypy_cache
+*.pyc
+models
+evidence
+data
+reports
+captures
+*.md
+!demo_clips/README.md
+tests

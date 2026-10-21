@@ -1,0 +1,41 @@
+{
+  "clips": [
+    {
+      "id": "recording",
+      "file": "recording.mp4",
+      "label": "Raised phone",
+      "expected": "alert",
+      "expected_seat": null,
+      "description": "Phone held up toward the screen for at least the piracy threshold.",
+      "synthetic_glint": true,
+      "notes": "Record at the auditorium seat. Keep the wrist above the shoulder for the full threshold."
+    },
+    {
+      "id": "glance",
+      "file": "glance.mp4",
+      "label": "Quick glance",
+      "expected": "no_alert",
+      "description": "Phone is checked for about a second, then lowered.",
+      "synthetic_glint": false,
+      "notes": "The timer should decay before PIRACY_ALERT."
+    },
+    {
+      "id": "eating",
+      "file": "eating.mp4",
+      "label": "Eating popcorn",
+      "expected": "no_alert",
+      "description": "Hand moves to the mouth, as if eating.",
+      "synthetic_glint": false,
+      "notes": "Wrist stays near the nose. This is eating_like, not a recording pose."
+    },
+    {
+      "id": "stretching",
+      "file": "stretching.mp4",
+      "label": "Arms raised",
+      "expected": "no_alert",
+      "description": "Both arms go up briefly and come back down.",
+      "synthetic_glint": false,
+      "notes": "A brief two-arm raise is stretching_like and must not alert."
+    }
+  ]
+}

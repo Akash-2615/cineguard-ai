@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CineGuard</title>
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+<a class="skip" href="#tab-live">Skip to live view</a>
+<header class="top">
+  <div class="brand">
+    <div class="wordmark">
+      <strong>CineGuard</strong>
+      <span class="product">Phone-up watch for one camera</span>
+    </div>
+    <span id="conn" class="pill">Connecting</span>
+    <span id="source-name" class="muted"></span>
+  </div>
+  <div class="metrics" aria-label="Processing">
+    <span id="fps">FPS --</span>
+    <span id="latency">Latency --</span>
+    <span id="nir-badge" class="pill nir-sim">NIR: SIMULATED</span>
+  </div>
+  <div class="header-actions">
+    <button id="theme" type="button">Light theme</button>
+    <button id="mute" type="button" aria-pressed="false">Mute alerts</button>
+    <button id="help" type="button" aria-haspopup="dialog">Shortcuts (?)</button>
+  </div>
+</header>
+<div id="degraded" class="banner" hidden></div>
+<div id="auth-warn" class="banner warn" hidden>No password is set. Anyone who can open this address can change settings.</div>
+<nav class="tabs" aria-label="Sections">
+  <button type="button" data-tab="live" aria-selected="true">Live</button>
+  <button type="button" data-tab="nir" aria-selected="false">NIR lab</button>
+  <button type="button" data-tab="seats" aria-selected="false">Seats</button>
+  <button type="button" data-tab="incidents" aria-selected="false">Incidents</button>
+  <button type="button" data-tab="scenarios" aria-selected="false">Scenarios</button>
+  <button type="button" data-tab="system" aria-selected="false">System</button>
+</nav>
+<main>
+  <section id="tab-live" data-panel="live"></section>
+  <section id="tab-nir" data-panel="nir" hidden></section>
+  <section id="tab-seats" data-panel="seats" hidden></section>
+  <section id="tab-incidents" data-panel="incidents" hidden></section>
+  <section id="tab-scenarios" data-panel="scenarios" hidden></section>
+  <section id="tab-system" data-panel="system" hidden></section>
+</main>
+<div id="toasts" aria-live="assertive" aria-atomic="false"></div>
+<div id="live-region" class="sr" aria-live="polite"></div>
+<dialog id="shortcuts">
+  <h2>Keyboard shortcuts</h2>
+  <ul>
+    <li>1 to 6 switch tabs</li>
+    <li>Space pauses or plays a file</li>
+    <li>F fullscreen video</li>
+    <li>M mute alerts</li>
+    <li>? opens this list</li>
+  </ul>
+  <button id="close-help" type="button">Close</button>
+</dialog>
+<script type="module" src="/static/js/main.js"></script>
+</body>
+</html>

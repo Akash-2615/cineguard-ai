@@ -1,0 +1,16 @@
+services:
+  cineguard:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./data:/app/data
+      - ./evidence:/app/evidence
+      - ./demo_clips:/app/demo_clips
+      - ./models:/app/models
+    # GPU is optional. The process uses CPU when CUDA is not visible.
+    # With the NVIDIA container toolkit you can add:
+    #   gpus: all
